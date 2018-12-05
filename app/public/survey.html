@@ -1,0 +1,230 @@
+<!doctype html5>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>FinderSurvey</title>
+
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- Font Awesome Glyphicons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+    <!-- Chosen -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+
+    <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        h1, h2, h3, h4, h5 {
+            margin: 0;
+            padding: 0;
+        }
+      
+        body {
+            background: rgb(248, 252, 254)
+        }
+
+        .survey {
+            background: rgb(207, 225, 233);
+            margin: 20px 0;
+            padding: 10px;
+        }
+        
+        .questions {
+            margin: 20px 0;
+        }
+
+        #submit {
+            display: flex; 
+            justify-content: center; 
+        }
+
+        button {
+            padding: 4px; 
+            background-color: rgb(222, 197, 133);
+        }
+
+        .basicInfo {
+            margin: 15px 0;
+
+        }
+
+        </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo-box" style="position: relative; margin: 10px; height: 10%; width: 100%;">
+            <div class="logo" style="position: absolute; top: 5px; left: 10px; ">
+                <img src="assets/img/Bharmony_icon.png" alt="eharmony_icon" height="50" width="50">
+            </div>
+            <div class="heading" style=" position: absolute; top: 5px; left: 80px;  clear: both;">
+                <h1>Bharmony</h1>
+            </div>
+        </div>
+        <div class="instruction">
+
+            <h3>What is this survey about...</h3>
+            Complete the survey, then we can find the most match friend for you. <br>
+
+        </div>
+        <div class="survey">
+            <div class="basicInfo">
+                <h5>Your name:</h5>
+                <input type="text" id="name" name="name" value="">
+                <h5>Your photo: </h5>
+                <input type="file" id="photo" name="photo" accept="image/*">
+            </div>
+
+            <h4>Score 1~5 from strongly disagree to strongly agree.</h4>
+
+
+            <div id="q1" class="questions">
+                q1. Your mind is always buzzing with unexplored ideas and plans.
+                <input type="radio" class="1" name="q1" value="1">1
+                <input type="radio" class="2" name="q1" value="2">2
+                <input type="radio" class="3" name="q1" value="3">3
+                <input type="radio" class="4" name="q1" value="4">4
+                <input type="radio" class="5" name="q1" value="5">5
+            </div>
+            <div id="q2" class="questions">
+                q2. Generally speaking, you rely more on your experience than your imagination.
+                <input type="radio" class="1" name="q2" value="1">1
+                <input type="radio" class="2" name="q2" value="2">2
+                <input type="radio" class="3" name="q2" value="3">3
+                <input type="radio" class="4" name="q2" value="4">4
+                <input type="radio" class="5" name="q2" value="5">5
+            </div>
+            <div id="q3" class="questions">
+                q3. You find it easy to stay relaxed and focused even when there is some pressure.
+                <input type="radio" class="1" name="q3" value="1">1
+                <input type="radio" class="2" name="q3" value="2">2
+                <input type="radio" class="3" name="q3" value="3">3
+                <input type="radio" class="4" name="q3" value="4">4
+                <input type="radio" class="5" name="q3" value="5">5
+            </div>
+            <div id="q4" class="questions">
+                q4. You rarely do something just out of sheer curiosity.
+                <input type="radio" class="1" name="q4" value="1">1
+                <input type="radio" class="2" name="q4" value="2">2
+                <input type="radio" class="3" name="q4" value="3">3
+                <input type="radio" class="4" name="q4" value="4">4
+                <input type="radio" class="5" name="q4" value="5">5
+            </div>
+            <div id="q5" class="questions">
+                q5. People can rarely upset you.
+                <input type="radio" class="1" name="q5" value="1">1
+                <input type="radio" class="2" name="q5" value="2">2
+                <input type="radio" class="3" name="q5" value="3">3
+                <input type="radio" class="4" name="q5" value="4">4
+                <input type="radio" class="5" name="q5" value="5">5
+            </div>
+            <div id="q6" class="questions">
+                q6. It is often difficult for you to relate to other people’s feelings.
+                <input type="radio" class="1" name="q6" value="1">1
+                <input type="radio" class="2" name="q6" value="2">2
+                <input type="radio" class="3" name="q6" value="3">3
+                <input type="radio" class="4" name="q6" value="4">4
+                <input type="radio" class="5" name="q6" value="5">5
+            </div>
+            <div id="q7" class="questions">
+                q7. It is often difficult for you to relate to other people’s feelings.
+                <input type="radio" class="1" name="q7" value="1">1
+                <input type="radio" class="2" name="q7" value="2">2
+                <input type="radio" class="3" name="q7" value="3">3
+                <input type="radio" class="4" name="q7" value="4">4
+                <input type="radio" class="5" name="q7" value="5">5
+            </div>
+            <div id="q8" class="questions">
+                q8. You rarely get carried away by fantasies and ideas.
+                <input type="radio" class="1" name="q8" value="1">1
+                <input type="radio" class="2" name="q8" value="2">2
+                <input type="radio" class="3" name="q8" value="3">3
+                <input type="radio" class="4" name="q8" value="4">4
+                <input type="radio" class="5" name="q8" value="5">5
+            </div>
+            <div id="q9" class="questions">
+                q9. You think that everyone’s views should be respected regardless of whether they are supported by
+                facts or not.
+                <input type="radio" class="1" name="q9" value="1">1
+                <input type="radio" class="2" name="q9" value="2">2
+                <input type="radio" class="3" name="q9" value="3">3
+                <input type="radio" class="4" name="q9" value="4">4
+                <input type="radio" class="5" name="q9" value="5">5
+            </div>
+            <div id="q0" class="questions">
+                q0. You feel more energetic after spending time with a group of people.
+                <input type="radio" class="1" name="q0" value="1">1
+                <input type="radio" class="2" name="q0" value="2">2
+                <input type="radio" class="3" name="q0" value="3">3
+                <input type="radio" class="4" name="q0" value="4">4
+                <input type="radio" class="5" name="q0" value="5">5
+            </div>
+        </div>
+        <div id="submit">
+            <button>
+                <h5>submit</h5>
+            </button>
+        </div>
+        <div id="result"></div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            var object;
+
+            $("#submit").click(function (event) {
+                event.preventDefault();
+                object = {
+                    name: $("#name").val(),
+                    photo: $("#photo").val(),
+                    answers: [
+                        $("input[name='q1']:checked").val(),
+                        $("input[name='q2']:checked").val(),
+                        $("input[name='q3']:checked").val(),
+                        $("input[name='q4']:checked").val(),
+                        $("input[name='q5']:checked").val(),
+                        $("input[name='q6']:checked").val(),
+                        $("input[name='q7']:checked").val(),
+                        $("input[name='q8']:checked").val(),
+                        $("input[name='q9']:checked").val(),
+                        $("input[name='q0']:checked").val()
+                    ]
+                }
+                // console.log(object);
+                $.post("/api/friends", object, function (data) {
+                    console.log(data);
+                    $("#result").text(data.name);
+
+                    var image = $("<image>")
+                    image.attr("src",data.image);
+                    $("#result").append(image);
+
+                });
+
+            });
+
+            // $(document).ready(function(){
+            // $("input[type='button']").click(function(){
+            //     var radioValue = $("input[name='gender']:checked").val();
+            //     if(radioValue){
+            //         alert("Your are a - " + radioValue);
+            //     }
+        });
+
+    </script>
+
+</body>
+
+</html>

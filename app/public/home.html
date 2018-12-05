@@ -1,0 +1,140 @@
+<!doctype html5>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Bharmony</title>
+  
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  
+    <!-- Font Awesome Glyphicons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <style>
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+
+      h1, h2, h3, h4, h5 {
+          margin: 0;
+          padding: 0;
+      }
+      
+      body {
+          position: relative;
+          z-index: 1;
+      }
+      
+      body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            opacity: 0.4; 
+            z-index: -1;
+            background: url("assets/img/helena-lopes-463976-unsplash.png") no-repeat no-repeat fixed center;
+            background-size: cover;
+            position: absolute;
+
+     }
+      
+      form {
+        color:rgba(44, 78, 95, 0.6);   
+        margin: 20px;       
+      }
+
+      .name h4 {
+          font-weight: bold;
+      }
+
+      .gender, .region {
+        margin: 5px 0;
+        padding: 5px;
+        background-color: whitesmoke;
+
+      }
+
+      button {
+          margin-top: 5px;
+          padding: 8px;
+          background-color: rgba(222, 152, 133, .7);
+          color: whitesmoke;
+      }
+
+      input {
+
+          padding: 5px;
+          text-align: center;
+      }
+
+  </style>
+  </head>
+<body>
+    <div class="container">
+        <div class="logo-box" style="position: relative; margin: 10px; height: 10%; width: 100%;">
+            <div class="logo" style = "position: absolute; top: 5px; left: 10px; ">
+                <img src="assets/img/Bharmony_icon.png" alt="eharmony_icon" height="50" width="50">
+            </div>
+            <div class="heading" style = " position: absolute; top: 5px; left: 80px;  clear: both;">
+                <h1>Bharmony</h1>
+            </div>
+        </div>
+        <div class="register-panel" style="width: 50%; height: 400px; background-color: rgba(154, 181, 194, 0.7);">
+            <h2 style="color:whitesmoke; font-weight: bolder; padding: 20px; text-align: center; ">Start Your Finding Journey Today</h2>
+            <h4 style="color:rgba(44, 78, 95, 0.6);   
+            margin: 20px;">
+                Hi, dear<span id="name"></span><input type="text" name="name" value="">.
+                <br> 
+                Welcome to Bharmony friend finderland~
+            </h4>
+            <!-- <form action="path" method="post">
+                <div class="name">
+                    <input type="text" name="firstname" value="please put your name here."><br>
+                </div>
+
+                <div class="gender">
+                    Your gender:<br>
+                    <input type="radio" name="gender" value="male" checked> Male
+                    <input type="radio" name="gender" value="female"> Female
+                    <input type="radio" name="gender" value="other"> Other<br>
+                </div>
+                <div class="region">
+                    Your location:<br>
+                    <select name="Your Ragion">
+                            <option value="United States">United States</option>
+                            <option value="United Kingdom">United Kingdom</option>
+                            <option value="Canada">Canada</option>
+                            <option value="Austrilia">Austrilia</option>
+                            <option value="New Zealand">New Zealand</option>
+                    </select>
+                </div>
+            </form> -->
+            
+            <!-- <button id="submit" style="margin: 10px 20px;"><h5>Let's go!</h5></button> -->
+            <a href="./survey" ><button></button></a>
+            
+        </div>
+
+        <div class="footer">
+
+        </div>
+    </div>
+    <script type="text/javascript">
+
+        var name=$("<input>").val();
+        $("#name").text(name);
+
+        $("#submit").click(function(event){
+            event.preventDefault()
+            console.log("clicked")
+            document.location.replace('/survey')
+        });
+    </script>
+    
+</body>
+</html>
