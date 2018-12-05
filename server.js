@@ -8,7 +8,7 @@ var api = require("./app/routing/apiRoutes")
 
 
 var app = express();
-var PORT = 8080;
+var PORT = process.env.port || 80;
 
 app.use(express.urlencoded({extended: true}))
 app.use(express.json());
