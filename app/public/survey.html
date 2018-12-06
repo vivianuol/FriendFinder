@@ -58,6 +58,51 @@
 
         }
 
+        .model {
+
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            margin-left: -250px;
+            width: 500px;
+            height: 300px;
+            text-align: center;
+            background-color: rgb(248, 252, 254);
+            border: gray solid 1px;
+            z-index: 5;
+        }
+        
+
+        .pop-heading, .pop-bestMatch  {
+            margin: 0 auto;
+            padding: 10px 15px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #bestMatch-name, #bestMatch-image {
+            display: block;
+            margin: 10px auto;
+        }
+
+        .pop-heading {
+            background-color: rgb(87, 123, 140);
+            color: azure;
+        }
+        
+        #close {
+            display: inline-block;
+            padding: 10px 20px;
+        }
+        
+        .fade-out {
+            visibility: hidden;
+        }
+
+        .toggle {
+            display: none;
+        }
+        
         </style>
 
 </head>
@@ -66,7 +111,7 @@
     <div class="container">
         <div class="logo-box" style="position: relative; margin: 10px; height: 10%; width: 100%;">
             <div class="logo" style="position: absolute; top: 5px; left: 10px; ">
-                <img src="assets/img/Bharmony_icon.png" alt="eharmony_icon" height="50" width="50">
+                <a href="./home.html"><img src="assets/img/Bharmony_icon.png" alt="eharmony_icon" height="50" width="50"></a>
             </div>
             <div class="heading" style=" position: absolute; top: 5px; left: 80px;  clear: both;">
                 <h1>Bharmony</h1>
@@ -78,12 +123,13 @@
             Complete the survey, then we can find the most match friend for you. <br>
 
         </div>
-        <div class="survey">
+        <div class="survey" style="position: relative;">
             <div class="basicInfo">
                 <h5>Your name:</h5>
                 <input type="text" id="name" name="name" value="">
-                <h5>Your photo: </h5>
-                <input type="file" id="photo" name="photo" accept="image/*">
+                <h5>Your photo link: </h5>
+                <!-- <input type="file" id="photo" name="photo" accept="image/*"> -->
+                <input type="text" id="image" name="image" value="">
             </div>
 
             <h4>Score 1~5 from strongly disagree to strongly agree.</h4>
@@ -170,14 +216,28 @@
                 <input type="radio" class="4" name="q0" value="4">4
                 <input type="radio" class="5" name="q0" value="5">5
             </div>
+
+
+            <!-- model -->
+            <div id="popup-model" class="model toggle">
+                <div class="pop-heading"><h2>Best Match</h2></div>
+                <div class="pop-bestMatch">
+                <div id="bestMatch-name" class="pop-content"></div>
+                <div id="bestMatch-image" class="pop-footer"></div>
+                </div>
+                <button id="close">close</button>
+            </div>
+
         </div>
         <div id="submit">
             <button>
                 <h5>submit</h5>
             </button>
         </div>
-        <div id="result"></div>
+
+
     </div>
+
 
     <script type="text/javascript">
         $(document).ready(function () {
@@ -188,7 +248,7 @@
                 event.preventDefault();
                 object = {
                     name: $("#name").val(),
-                    photo: $("#photo").val(),
+                    image: $("#image").val(),
                     answers: [
                         $("input[name='q1']:checked").val(),
                         $("input[name='q2']:checked").val(),
@@ -205,15 +265,25 @@
                 // console.log(object);
                 $.post("/api/friends", object, function (data) {
                     console.log(data);
-                    $("#result").text(data.name);
+                    $("#bestMatch-name").text(data.name);
 
-                    var image = $("<image>")
-                    image.attr("src",data.image);
-                    $("#result").append(image);
+                    var image = $("<img>")
+                    image.attr("src", data.image);
+                    image.attr("style", "width:120px; height:100px;")
+                    $("#bestMatch-image").html(image);
+                    
 
                 });
 
+                $("#popup-model").removeClass("toggle");
+
             });
+
+            $("#close").click(function(event){
+                event.preventDefault();
+                $("#popup-model").addClass("toggle")
+                console.log("clicked")
+            })
 
             // $(document).ready(function(){
             // $("input[type='button']").click(function(){

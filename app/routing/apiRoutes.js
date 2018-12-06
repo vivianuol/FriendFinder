@@ -56,7 +56,7 @@ api.post('/', function (req, res) {
     }
     
 
-    clientData.push(req.body);
+    clientData.push(currentUser);
     console.log("clientData:" + clientData);
     
 
@@ -72,6 +72,7 @@ api.post('/', function (req, res) {
     });
 
 //JSON.stringify(bestMatch)
+console.log(bestMatch);
     res.json(bestMatch);
 })
 
